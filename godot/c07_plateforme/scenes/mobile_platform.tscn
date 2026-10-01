@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b8k8pa31alwap"]
+
+[ext_resource type="Texture2D" uid="uid://cpvia5a7lrl2g" path="res://assets/sprites/platforms.png" id="1_ax8ji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vloc"]
+size = Vector2(30, 8)
+
+[sub_resource type="Animation" id="Animation_ax8ji"]
+resource_name = "move"
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vloc"]
+_data = {
+&"move": SubResource("Animation_ax8ji")
+}
+
+[node name="MobilePlatform" type="Node2D" unique_id=286961186]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=70785131]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=648978322]
+texture = ExtResource("1_ax8ji")
+region_enabled = true
+region_rect = Rect2(15.710335, 31.93154, 32, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1062619182]
+shape = SubResource("RectangleShape2D_6vloc")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=476529880]
+libraries/ = SubResource("AnimationLibrary_6vloc")
+autoplay = &"move"
