@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 @onready var Sprite: Sprite2D = $Sprite2D
 @onready var animationPlayer = $AnimationPlayer
 @onready var anim_tree: AnimationTree = $AnimationTree
+
 var StateMachine
 
 var is_attacking: bool = false
@@ -58,7 +59,7 @@ func _physics_process(delta: float) -> void:
 
 	# 5. Animation
 	if not is_on_floor():
-		StateMachine.travel("Jump" if velocity.y < 0 else "Fall")
+		print("Hop!")
 	elif direction != 0:
 		StateMachine.travel("Run")
 	else:
