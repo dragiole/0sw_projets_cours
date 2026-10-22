@@ -2,10 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://co806t5p15df4" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://c0gkr0u00vmyq" path="res://assets/sprites/world_tileset.png" id="2_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://cwumg4qc3qgd1" path="res://assets/sprites/2.png" id="2_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://b8k8pa31alwap" path="res://scenes/mobile_platform.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://d2gokyrqvi3vk" path="res://scenes/coin.tscn" id="4_k0juu"]
+[ext_resource type="Texture2D" uid="uid://dvq5g3u126ryi" path="res://assets/sprites/4.png" id="4_q5onr"]
 [ext_resource type="PackedScene" uid="uid://d0ys52civu7pq" path="res://scenes/killzone.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://cs17djjvrgtfc" path="res://scenes/ennemy.tscn" id="6_qfnet"]
+[ext_resource type="Texture2D" uid="uid://5ugrbpot851f" path="res://assets/sprites/1.png" id="7_i7141"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
 size = Vector2(600, 18)
@@ -171,6 +174,31 @@ sources/0 = SubResource("TileSetAtlasSource_4wyf3")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ra6s0"]
 
 [node name="World" type="Node2D" unique_id=733792932]
+
+[node name="Ciel" type="Parallax2D" parent="." unique_id=2077018277]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(336, 40)
+repeat_times = 4
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="TextureRect" parent="Ciel" unique_id=45914439]
+texture = ExtResource("7_i7141")
+
+[node name="Lune" type="Parallax2D" parent="." unique_id=1916678578]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="TextureRect" parent="Lune" unique_id=1176255208]
+offset_right = 576.0
+offset_bottom = 324.0
+texture = ExtResource("2_w7kh3")
+
+[node name="Nuage1" type="Parallax2D" parent="." unique_id=52328732]
+scroll_scale = Vector2(0.5, 0)
+repeat_size = Vector2(300, 0)
+autoscroll = Vector2(2, 0)
+
+[node name="Sprite2D" type="TextureRect" parent="Nuage1" unique_id=541816711]
+texture = ExtResource("4_q5onr")
 
 [node name="Player" parent="." unique_id=1594895435 instance=ExtResource("1_nnsk1")]
 position = Vector2(-9, -15)
